@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function SearchForm ({ onSubmit, submitting, stop, onStopChange }) {
+function SearchForm ({ onSubmit, submitting, stop, onStopChange, buttonText }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset>
@@ -15,7 +15,7 @@ function SearchForm ({ onSubmit, submitting, stop, onStopChange }) {
           onChange={onStopChange}
         />
         <button disabled={submitting} type='submit'>
-          {submitting ? 'Buscando...' : '🔎 buscar'}
+          {submitting ? 'Buscando...' : buttonText}
         </button>
       </fieldset>
     </form>
@@ -26,7 +26,8 @@ SearchForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onStopChange: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
-  stop: PropTypes.string.isRequired
+  stop: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired
 }
 
 export default SearchForm

@@ -61,6 +61,7 @@ class App extends Component {
             submitting={submitting}
             onSubmit={this.handleSubmit}
             onStopChange={this.handleStopChange}
+            buttonText={submittedOnce ? 'Actualizar' : '🔎 buscar'}
           />
           {error && <NotFound stop={stop} />}
           <section id='results'>
